@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"/>
+
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="images/icons/vs_icon.png" alt="vs-icon">
+            <ul>
+                <li>File</li>
+                <li>Edit</li>
+                <li>Selection</li>
+                <li>View</li>
+                <li>Go</li>
+                <li>Run</li>  
+            </ul>
+            <div class="arrow">
+                <span class="material-symbols-outlined">arrow_back</span>
+                <span class="material-symbols-outlined">arrow_forward</span>
+            </div>
+            <div class="search-box">
+                <span class="material-symbols-outlined">search</span>
+                <input type="search" placeholder="Search...">
+            </div>
+            <div class="window-controls">
+                <span class="material-symbols-outlined minimize">keyboard_arrow_down</span>
+                <span class="material-symbols-outlined restore">pan_zoom</span>
+                <span class="material-symbols-outlined close">close</span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <p>EXPLORER</p>
+                <span class="material-symbols-outlined">more_vert</span>
+            </div>
+            <div class="file-explorer">
+                <div class="explorer-folder">
+                    <div class="folder-header">
+                        <span class="material-symbols-outlined expand-icon">expand_more</span>
+                        <span class="material-symbols-outlined folder-icon">folder_open</span>
+                        <span class="folder-name">Portfolio</span>
+                    </div>
+                    <div class="folder-items">
+                        <div class="file-item">
+                            <span class="material-symbols-outlined file-icon">description</span>
+                            <span class="file-name">about_me.html</span>
+                        </div>
+                        <div class="file-item">
+                            <span class="material-symbols-outlined file-icon">description</span>
+                            <span class="file-name">projects.html</span>
+                        </div>
+                        <div class="file-item">
+                            <span class="material-symbols-outlined file-icon">description</span>
+                            <span class="file-name">contact_me.html</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <div class="topbar">
+            <div class="tabs">
+                <div class="tab active">
+                    <span class="material-symbols-outlined">description</span>
+                    <span class="tab-label">about_me.html</span>
+                    <span class="material-symbols-outlined close-tab">close</span>
+                </div>
+                <div class="tab">
+                    <span class="material-symbols-outlined">description</span>
+                    <span class="tab-label">projects.html</span>
+                    <span class="material-symbols-outlined close-tab">close</span>
+                </div>
+                <div class="tab">
+                    <span class="material-symbols-outlined">description</span>
+                    <span class="tab-label">contact_me.html</span>
+                    <span class="material-symbols-outlined close-tab">close</span>
+                </div>
+            </div>
+        </div>
+
+        <main class="content">
+            <div class="section" data-section="about">
+                <img src="" alt="">
+                <h1>About Me</h1>
+                <p>Full Stack Developer passionate about building web applications with modern technologies.</p>
+            </div>
+
+            <div class="section" data-section="tech-stack">
+                <h2>Tech Stack</h2>
+                <div class="tech-grid">
+                    <div class="tech-item">HTML5</div>
+                    <div class="tech-item">CSS3</div>
+                    <div class="tech-item">JavaScript</div>
+                    <div class="tech-item">React</div>
+                    <div class="tech-item">Node.js</div>
+                    <div class="tech-item">MongoDB</div>
+                    <div class="tech-item">Git</div>
+                    <div class="tech-item">VS Code</div>
+                </div>
+            </div>
+
+            <div class="section" data-section="projects">
+                <h2>Projects</h2>
+                <div class="project">
+                    <h3>Project 1</h3>
+                    <p>A responsive web application built with React and Node.js</p>
+                </div>
+                <div class="project">
+                    <h3>Project 2</h3>
+                    <p>Full stack MERN application with authentication and database</p>
+                </div>
+            </div>
+
+            <div class="section" data-section="contact">
+                <h2>Contact</h2>
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </main>
+
+        <footer class="bottombar">
+            Bottom bar
+        </footer>
+
+    </div>
+
+    <script>
+        // Folder toggle
+        document.querySelector('.folder-header').addEventListener('click', function() {
+            const icon = this.querySelector('.expand-icon');
+            const items = this.nextElementSibling;
+            icon.classList.toggle('collapsed');
+            items.style.display = items.style.display === 'none' ? 'flex' : 'none';
+        });
+
+        // Contact form
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message!');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
